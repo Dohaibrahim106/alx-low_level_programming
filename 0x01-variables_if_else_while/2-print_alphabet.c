@@ -1,11 +1,18 @@
 #include <stdio.h>
 
-int main() {
-    char c = 'a'; // start with the letter a
-    while (c <= 'z') { // loop until the letter z
-        putchar(c); // print the current letter
-        c++; // move to the next letter
-    }
-    putchar('\n'); // print a newline character at the end
-    return 0;
+/**
+* main - Entry point
+*
+* Return: returns 0 when everything works fine
+*
+*/
+
+int main(void)
+{
+	int n;
+
+	for (n = 97; n <= 122; ++n)
+		putchar(n);
+	putchar(10);
+	return (0);
 }
