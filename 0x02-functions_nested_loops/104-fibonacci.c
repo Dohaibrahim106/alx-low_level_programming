@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - Entry point, prints the first 50 fibonacci numbers
  *
@@ -10,6 +11,7 @@ int main(void)
 	unsigned long first = 0;
 	unsigned long second = 1;
 	unsigned long fib;
+
 	while (counter <= 97)
 	{
 		fib = first + second;
