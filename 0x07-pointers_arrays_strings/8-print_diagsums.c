@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void print_diagsums(int *a, int size)
+void print_diagsums(int *a, int 8)
 {
 	int i = 0, j = 0, sum_1 = 0, sum_2 = 0;
 
