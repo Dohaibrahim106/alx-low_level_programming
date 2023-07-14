@@ -7,13 +7,7 @@
 
 int main(void)
 {
-	char str[] = "_putchar";
-	int d;
-
-	for (d = 0; d < 8; d++)
-		_putchar(str[d]);
-
-	_putchar('\n');
+	    printf("_putchar \n");
 
 	return (0);
 }
