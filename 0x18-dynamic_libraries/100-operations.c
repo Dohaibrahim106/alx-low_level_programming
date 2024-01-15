@@ -1,46 +1,54 @@
 #include "main.h"
+#include <string.h>
+#include <stdio.h>
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
- *
- * Return: the int converted from the string
+ * add - function that that add
+ * @a: parameter is integer
+ * @b: parameter is integer
+ * Return: add
  */
-int _atoi(char *s)
+int add(int a, int b)
 {
-	int i, d, n, len, f, digit;
-
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
-	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
-		}
-		i++;
-	}
-
-	if (f == 0)
-		return (0);
-
-	return (n);
+return (a + b);
+}
+/**
+ * sub - function that that sub
+ * @a: parameter is integer
+ * @b: parameter is integer
+ * Return: sub
+ */
+int sub(int a, int b)
+{
+return (a - b);
+}
+/**
+ * mul - function that that mul
+ * @a: parameter is integer
+ * @b: parameter is integer
+ * Return: mul
+ */
+int mul(int a, int b)
+{
+return (a *b);
+}
+/**
+ * div - function that that div
+ * @a: parameter is integer
+ * @b: parameter is integer
+ * Return: div
+ */
+int div(int a, int b)
+{
+return (a / b);
+}
+/**
+ * mod - function that that mod
+ * @a: parameter is integer
+ * @b: parameter is integer
+ * Return: mod
+ */
+int mod(int a, int b)
+{
+return (a % b);
 }
