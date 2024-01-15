@@ -1,54 +1,40 @@
 #include "main.h"
-#include <string.h>
-#include <stdio.h>
 
 /**
- * add - function that that add
- * @a: parameter is integer
- * @b: parameter is integer
- * Return: add
+ * *_realloc - allocates a memory block using malloc and free.
+ * @ptr: pointer to memory allocated with malloc(old_size).
+ * @old_size: size in bytes, of the allocated space for ptr
+ * @new_size: size in bytes of the new memory block.
+ *
+ * Return: NULL if new_size = 0 and ptr is not NULL.
  */
-int add(int a, int b)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-return (a + b);
-}
-/**
- * sub - function that that sub
- * @a: parameter is integer
- * @b: parameter is integer
- * Return: sub
- */
-int sub(int a, int b)
-{
-return (a - b);
-}
-/**
- * mul - function that that mul
- * @a: parameter is integer
- * @b: parameter is integer
- * Return: mul
- */
-int mul(int a, int b)
-{
-return (a *b);
-}
-/**
- * div - function that that div
- * @a: parameter is integer
- * @b: parameter is integer
- * Return: div
- */
-int div(int a, int b)
-{
-return (a / b);
-}
-/**
- * mod - function that that mod
- * @a: parameter is integer
- * @b: parameter is integer
- * Return: mod
- */
-int mod(int a, int b)
-{
-return (a % b);
+	void *p;
+	unsigned int i;
+
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	if (ptr == NULL)
+	{
+		p = malloc(new_size);
+		if (p == NULL)
+			return (NULL);
+		return (p);
+	}
+	if (new_size > old_size)
+	{
+		p = malloc(new_size);
+		if (p == NULL)
+			return (NULL);
+		for (i = 0; i < old_size && i < new_size; i++)
+			*((char *)p + i) = *((char *)ptr + i);
+		free(ptr);
+	}
+	return (p);
 }
